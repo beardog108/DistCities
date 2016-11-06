@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DistWeb</title>
+  <link rel='stylesheet' href='bootstrap.min.css'>
+  <link rel='stylesheet' href='bootstrap-theme.min.css'>
+  <link rel='stylesheet' href='main.css'>
+  <script src='webtorrent.min.js'></script>
+  <script src='jquery.min.js'></script>
+  <script src='sjcl.js'></script>
+  <script src='bootstrap.min.js'></script>
+  <script src='growl.min.js'></script>
+  <script src='main.js'></script>
+</head>
+<body>
+  <div id='error'></div>
+  <noscript><h1 class="center">Please Enable JavaScript</h1></noscript>
+  <div class='container'>
+  <h1 id='title'>DistWeb</h1>
+  <div id='aboutArea'>
+    <p class='about'>DistWeb is a very simple distributed website sharing platform.</p>
+    <p class='about'>Just type or paste in some HTML, click seed, and share!</p>
+    <p class='about'>Your webpage will be available as long as at least 1 person has it open.</p>
+    <p class='about'>Pages are stored in cache, so unseeded pages can often be re-opened.</p>
+    <p class='about'>Disclaimer: <span class='warning'>This software offers no privacy. Arbitrary people can see the IP you use to seed and access pages. This is a <a href='https://en.wikipedia.org/wiki/Peer-to-peer'>P2P</a> system. Your bandwidth is shared.</span></p>
+  </div>
+  <div id='createArea'>
+    <h1>Create a Webpage</h1>
+    <textarea id='data' cols='50' rows='25' placeholder='HTML Goes Here!'></textarea>
+    <br>
+    <button id='create' class='btn btn-primary btn-lg'>Seed</button>
+  </div>
+  <div id='output'><h1>Currently Seeding</h1><br></div>
+  <footer class='center'>Copyright 2016 Kevin Froman<br><br>
+    <p class='about'>Dislaimer #2: <span class='warning'>The creator(s) of this software and/or the person(s) providing this software do not host, create, or advertise web pages produced with said software, unless otherwise noted, and are not responsible for their content or distribution.</span></p>
+  </footer>
+</div>
+</body>
+</html>

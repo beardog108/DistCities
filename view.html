@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distributed Site</title>
+  <link rel='stylesheet' href='bootstrap.min.css'>
+  <style>
+  #site
+  {
+  border: 0; width: 100%; height: 100%;
+  min-height: 5000px;
+  }
+  html, body {
+    margin: 0;
+  }
+  #error, noscript{
+    z-index: 9999;
+    height: 100%;
+    width: 100%;
+    color: red;
+    background-color: black;
+    position: fixed;
+    display: none;
+  }
+  </style>
+  <script src='webtorrent.min.js'></script>
+  <script src='jquery.min.js'></script>
+  <script src='sjcl.js'></script>
+  <script src='bootstrap.min.js'></script>
+  <script src='growl.min.js'></script>
+  <script src='view.js'></script>
+</head>
+<body>
+  <div id='error'></div>
+  <div id='loading'>Loading distributed website <img src='loading.gif' alt=''></div>
+  <noscript><h1 class="center">Please Enable JavaScript</h1></noscript>
+  <iframe sandbox='allow-top-navigation' id='site'></iframe>
+</body>
+</html>
