@@ -1,4 +1,5 @@
 window.onload = function(){
+var root = window.location.host + window.location.pathname.replace('index.html', '');
 
 String.prototype.startsWith = function(needle)
 {
@@ -34,7 +35,7 @@ $('#create').click(function(){
   client.seed(file, function (torrent) {
     console.log('client is seeding ' + torrent.magnetURI);
     $('#output').css('display', 'block');
-    $('#output').append('<span class="removeTorrent"><button class="btn btn-danger btn-sm" data-infoHash="' + torrent.infoHash + '" >Remove</button> <input type="text" readonly value="https://chaoswebs.net/distweb/view.html#t=' + torrent.infoHash + '&256=' + digest_sha256 + '"><br><br></span>');
+    $('#output').append('<span class="removeTorrent"><button class="btn btn-danger btn-sm" data-infoHash="' + torrent.infoHash + '" >Remove</button> <input type="text" readonly value="' + root + 'view.html#t=' + torrent.infoHash + '&256=' + digest_sha256 + '"><br><br></span>');
     try {
       localStorage.setItem('fullTest', '9999999');
     } catch(e) {
