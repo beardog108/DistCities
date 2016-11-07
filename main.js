@@ -1,5 +1,5 @@
 window.onload = function(){
-var root = window.location.host + window.location.pathname.replace('index.html', '');
+var root = window.location.protocol + '//' + window.location.host + window.location.pathname.replace('index.html', '');
 
 String.prototype.startsWith = function(needle)
 {
