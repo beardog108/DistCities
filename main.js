@@ -35,6 +35,7 @@ $('#create').click(function(){
   client.seed(file, function (torrent) {
     console.log('client is seeding ' + torrent.magnetURI);
     $('#output').css('display', 'block');
+    console.log('Security hash: ' + digest_sha256);
     $('#output').append('<span class="removeTorrent"><button class="btn btn-danger btn-sm" data-infoHash="' + torrent.infoHash + '" >Remove</button> <input type="text" readonly value="' + root + 'view.html#t=' + torrent.infoHash + '&256=' + digest_sha256 + '"><br><br></span>');
     try {
       localStorage.setItem('fullTest', '9999999');
@@ -61,14 +62,14 @@ for (var magnet in localStorage){
 }
 
 function loadLocal(hash) {
-
+  var text = localStorage[hash];
   // Load webpgae from localStorage cache
   console.log('Loading from cached copy.');
 
-  var data = new Blob([localStorage[hash]], {type: 'text/html'});
+  var data = new Blob([text], {type: 'text/html'});
 
   var parts = [
-    new Blob([localStorage[hash]], {type: 'text/html'}),
+    new Blob([text], {type: 'text/html'}),
   ];
 
   // Construct a file
@@ -77,11 +78,12 @@ function loadLocal(hash) {
       type: "text/html"
   });
 
-  var bitArray = sjcl.hash.sha256.hash(data);
+  var bitArray = sjcl.hash.sha256.hash(text);
   var digest_sha256 = sjcl.codec.hex.fromBits(bitArray);
 
   client.seed(file, function (torrent) {
     console.log('client is seeding ' + torrent.magnetURI);
+    console.log(digest_sha256);
     $('#output').css('display', 'block');
     $('#output').append('<span class="removeTorrent"><button class="btn btn-danger btn-sm" data-infoHash="' + torrent.infoHash + '" >Remove</button> <input type="text" readonly value="https://chaoswebs.net/distweb/view.html#t=' + torrent.infoHash + '&256=' + digest_sha256 + '"><br><br></span>');
     torrent.on('wire', function (wire, addr) {

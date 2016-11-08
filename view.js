@@ -110,7 +110,7 @@ function downloadFromTorrent(hash){
 function verify(checksum, text){
   var bitArray = sjcl.hash.sha256.hash(text);
   var digest_sha256 = sjcl.codec.hex.fromBits(bitArray);
-
+  console.log('Security hash: ' + digest_sha256);
   if (digest_sha256 != checksum){
     return false;
   }
