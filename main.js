@@ -112,5 +112,4 @@ $(document).on('click', '.removeTorrent', '.btn', function(event){
     event.target.parentNode.remove();
 });
 
-
 }
