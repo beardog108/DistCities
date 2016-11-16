@@ -19,19 +19,19 @@ self.addEventListener("install", function(event) {
         */
         return cache.addAll([
           '/',
-          '/distcities/main.css',
-          '/distcities/main.js',
-          '/distcities/bootstrap-theme.min.css',
-          '/distcities/bootstrap.min.css',
-          '/distcities/view.js',
-          '/distcities/webtorrent.min.js',
-          '/distcities/growl.min.js',
-          '/distcities/jquery.min.js',
-          '/distcities/bootstrap.min.js',
-          '/distcities/sjcl.js',
-          '/distcities/index.html',
-          '/distcities/view.html',
-          '/distcities/loading.gif'
+          '/distcities/client/main.css',
+          '/distcities/client/main.js',
+          '/distcities/client/bootstrap-theme.min.css',
+          '/distcities/client/bootstrap.min.css',
+          '/distcities/client/view.js',
+          '/distcities/client/webtorrent.min.js',
+          '/distcities/client/growl.min.js',
+          '/distcities/client/jquery.min.js',
+          '/distcities/client/bootstrap.min.js',
+          '/distcities/client/sjcl.js',
+          '/distcities/client/index.html',
+          '/distcities/client/view.html',
+          '/distcities/client/loading.gif'
         ]);
       })
       .then(function() {

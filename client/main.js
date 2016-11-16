@@ -85,7 +85,7 @@ function loadLocal(hash) {
     console.log('client is seeding ' + torrent.magnetURI);
     console.log(digest_sha256);
     $('#output').css('display', 'block');
-    $('#output').append('<span class="removeTorrent"><button class="btn btn-danger btn-sm" data-infoHash="' + torrent.infoHash + '" >Remove</button> <input type="text" readonly value="https://chaoswebs.net/distcities/view.html#t=' + torrent.infoHash + '&256=' + digest_sha256 + '"><br><br></span>');
+    $('#output').append('<span class="removeTorrent"><button class="btn btn-danger btn-sm" data-infoHash="' + torrent.infoHash + '" >Remove</button> <input type="text" readonly value="' + root + 'view.html#t=' + torrent.infoHash + '&256=' + digest_sha256 + '"><br><br></span>');
     torrent.on('wire', function (wire, addr) {
       $.bootstrapGrowl("Connected with peer: " + addr);
     });
